@@ -1,0 +1,168 @@
+//NATHALIA MACHADO RA: 26006364-2
+
+#include <iostream> //1 biblioteca
+#include <stdio.h>
+
+int main() {
+	
+    char nome[50];
+    int idade;
+    int a, b;
+    float nota1, nota2, media;
+    int numero;
+    float salario;
+    int opcao;
+    float x, y, resultado;
+    float altura, peso;
+
+    //1. Nome
+    
+    printf("Digite seu nome: ");
+    scanf("%s", nome);
+    printf("Ola, %s!\n", nome); //2 erros - "%d"
+
+
+    //2. Idade
+    printf("\nDigite sua idade: ");
+    scanf("%d", &idade); //3 erros - "%f"
+
+    if (idade >= 18) {
+	
+        printf("Entrada permitida\n"); //11 faltou as chaves "{}"
+		}
+    else {
+        printf("Entrada nao permitida\n"); //12 faltou as chaves "{}"
+        }
+    
+
+    // 3. Soma
+    printf("\nDigite dois inteiros: ");
+    scanf("%d %d", &a, &b);
+    printf("Soma = %d\n", a + b); //4 erros Sinal de opera��o "-"
+
+    // 4. Maior numero
+    printf("\nDigite dois inteiros: ");
+    scanf("%d %d", &a, &b);
+
+    if (a < b) { //13 faltou as chaves "{}"
+	
+	
+        printf("Maior = %d\n", b); //5 erros variavel trocada
+    } 
+	else {
+        printf("Maior = %d\n", a); //6 erros variavel trocada
+	} //14 faltou as chaves "{}"
+
+    // 5. Media
+    printf("\nDigite duas notas: ");
+    scanf("%f %f", &nota1, &nota2); 
+
+    media = (nota1 + nota2) /2 ; //7 faltou os parenteses e dividir por 2
+
+    if (media >= 7) { //15 faltou as chaves "{}"
+	
+        printf("Aprovado\n");
+    }
+	else { //16 faltou as chaves "{}"
+        printf("Reprovado\n");
+	}
+    // 6. Positivo, negativo ou zero
+    printf("\nDigite um numero: ");
+    scanf("%d", &numero);
+
+    if (numero > 0)
+        printf("Positivo \n"); //8 troca de printf para positivo
+    else if (numero < 0)
+        printf("Negativo\n"); //9 troca de printf para negativo
+    else
+        printf("Zero\n");
+
+    // 7. Par ou impar
+    printf("\nDigite um numero inteiro: ");
+    scanf("%d", &numero);
+
+    if (numero % 2 == 0){ //10 resto correto correto: "0"    					 
+        printf("Par\n");
+	} //17 faltou as chaves "{}"
+    else  {
+        printf("Impar\n");
+	} //18 faltou as chaves "{}"
+	
+    // 8. Calculadora
+    printf("\nDigite dois numeros: ");
+    scanf("%d %d", &x, &y);
+
+    printf("1 - Soma\n");
+    printf("2 - Subtracao\n");
+    printf("3 - Multiplicacao\n");
+    printf("4 - Divisao\n");
+    printf("Escolha: ");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1:
+            resultado = x + y;
+        		printf ("Resultado: ", resultado);
+            break;
+        case 2:
+            resultado = x - y;
+            break;
+        case 3:
+            resultado = x * y;
+            break;
+        case 4:
+            resultado = x / y;
+            break;
+        default:
+            printf("Opcao invalida\n");
+    }
+
+    printf("Resultado = %d\n", resultado);
+
+    // 9. Salario
+    printf("\nDigite seu salario: ");
+    scanf("%f", &salario);
+
+	float aumento = salario * 0.10;
+    float novo_salario = (aumento + salario); // 19 declarar variavel aumento 
+    										  // 20 declarar novo salario
+
+    printf("Novo salario: %.2f\n", novo_salario); //21 usar novo salario
+
+    // 10. Concurso
+    printf("\nDigite seu nome: ");
+    scanf("%s", nome);
+
+    printf("Digite sua nota: ");
+    scanf("%d", &nota1);
+
+    if (nota1 >= 60) 
+        printf("%s: aprovado\n", nome);
+    else
+        printf("%s: reprovado\n", nome);
+
+    // DESAFIO
+    printf("\n===== RELATORIO =====\n");
+
+    printf("Nome: ");
+    scanf("%s", nome);
+
+    printf("Idade: ");
+    scanf("%d", &idade);
+
+    printf("Altura: ");
+    scanf("%d", &altura);
+
+    printf("Peso: ");
+    scanf("%d", &peso);
+
+    printf("\n===== RELATORIO =====\n");
+    printf("Nome: %s\n", nome);
+    printf("Idade: %d anos\n", idade);
+    printf("Altura: %.2f m\n", altura);
+    printf("Peso: %.2f kg\n", peso);
+
+    return 0;
+}
+
+
